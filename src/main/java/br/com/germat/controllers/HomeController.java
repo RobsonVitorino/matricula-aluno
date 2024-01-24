@@ -1,15 +1,17 @@
-package br.com.germt.controllers;
+package br.com.germat.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping("/index")
 public class HomeController {
 
-    @GetMapping
-    public String index() {
-        return "index";
+    @RequestMapping("/")
+    public ModelAndView index() {
+
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("index");
+        return mv;
     }
 }
