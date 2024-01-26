@@ -11,26 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,600&family=Ubuntu&family=Work+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
-        <header>
-            <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2196F3">
-                <a class="navbar-brand" href="#">
-                    <img src="img/blue_minimalist_logo.png" width="210px"/>
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navMobile">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div id="navMobile" class="navbar-collapse collapse justify-content-end" >
-                    <a class="nav-item nav-link">Home</a>
-                    <a class="nav-item nav-link">Cadastra Aluno</a>
-                    <a class="nav-item nav-link">Pesquisar Aluno</a>
-                    <a class="nav-item nav-link btn-danger">Sair</a>
-                </div>
-
-            </nav>
-
-
-        </header>
+        <div th:replace="fragmentos/fragmentos :: cabecalho"></div>
         <section class="neo-section" style="background-image: url('img/yellow_modern.jpg');">
 
             <div class="sombra"></div>
@@ -53,6 +34,9 @@
             </div>
 
         </section>
+
+        <div th:replace="fragmentos/fragmentos :: rodape"></div>
+
 
         <script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
         <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>

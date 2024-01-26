@@ -1,9 +1,10 @@
 @charset "UTF-8";
 *{margin: 0; padding:0; box-sizing: border-box;}
-nav{height: 90px; color: #ffffff}
+nav{height: 90px; color: #fff; text-transform: uppercase;}
 a{cursor: pointer; font-weight: bold;}
+a.btn-nav:hover{color: #FFCA28}
 .neo-section{
-    min-height: 900px;
+    min-height: 820px;
     background-size: cover !important;
     background-position: center;
     background-repeat: no-repeat;
@@ -23,4 +24,12 @@ a{cursor: pointer; font-weight: bold;}
 .texto-centro{color: #ffffff; font-size: 3em; font-family: 'Ubuntu': font-weight: bold}
 .btn{width: 280px; color: #fff; border-radius: 10px; border: 3px solid #FFA000; padding:20px; font-wight: bold;}
 .botoes{padding: 2% 15%;}
-.btn:hover{color: #FFB74D; background-color: rgba(0,0,0,0.2);}
+.btn:hover{color: #FFB74D; background-color: rgba(0,0,0,0.2); font-wight: bold;}
+.rodape{color: #ffffff; background-color: #2196F3; text-align: center; font-size: 1.25em; padding: 15px;}
+
+/* Responsividade */
+@media screen and (max-width: 993px){
+    .wm{width:100%;}
+    nav{heigth: 100%;}
+    .neo-container{margin-top: 120px;}
+}
