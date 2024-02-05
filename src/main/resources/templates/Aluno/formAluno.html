@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang=" pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale1.0">
+    <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
+    <title>Inserir Alunos</title>
+    <meta name="author" content="Robson Vitorino"/>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/006642858d.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,600&family=Ubuntu&family=Work+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div th:replace="fragmentos/fragmentos :: cabecalho"></div>
+
+    <div class="conteiner" style="margin-top: 50px;">
+
+        <h4>+ Inserir Alunos</h4>
+        <hr>
+        <br>
+
+        <form method="post" action="/InsertAlunos" th:object="${aluno}">
+            <div class="row">
+            <div class="col-md-6 form-group offset-md-3">
+                <label>Nome do Aluno: </label>
+                <input class="form-control" placeholder="Ex: Laura Nayara" th:field="*{nome}">
+            </div>
+            </div>
+
+<!--            curso-->
+
+            <div class="row">
+                <div class="col-md-6 form-group offset-md-3">
+                    <label>Selecione o Curso:</label>
+                    <select class="form-control" th:field="*{curso}">
+                        <option th:each="cursos : ${T(br.com.germat.Enums.Curso).values()}"
+                        th:value="${cursos}" th:text="${cursos}"></option>
+                    </select>
+                </div>
+            </div>
+
+<!--            matricula-->
+            <div class="row">
+                <div class="col-md-6 form-group offset-md-3">
+                    <label>Gerar Matricula: </label>
+                    <input class="form-control" th:field="*{matricula}">
+                    <button type="button" onclick="GerarMatricula();" class="btn btn-dark" style="margin-top: 10px">Gerar</button>
+                </div>
+            </div>
+
+<!--            status-->
+
+            <div class="row">
+                <div class="col-md-6 form-group offset-md-3">
+                    <label>Selecione o Status:</label>
+                    <select class="form-control" th:field="*{status}">
+                        <option th:each="status : ${T(br.com.germat.Enums.Status).values()}"
+                                th:value="${status}" th:text="${status}"></option>
+                    </select>
+                </div>
+            </div>
+
+<!--            turno-->
+
+            <div class="row">
+                <div class="col-md-6 form-group offset-md-3">
+                    <label>Turno: </label>
+                    <input class="form-control" placeholder="Ex: Manhã" th:field="*{turno}">
+                </div>
+            </div>
+
+            <div class="row">
+                <button type="submit" class="btn btn-success offset-md-5">SALVAR</button>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <a class="btn btn-outline-danger">VOLTAR</a>
+            </div>
+
+        </form>
+
+    </div>
+    <script src="js/main.js"></script>
+    <script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+</html>
